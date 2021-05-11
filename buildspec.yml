@@ -17,3 +17,5 @@ phases:
       # Use AWS SAM to package the application by using AWS CloudFormation
       - sam package --template-file template.yml --s3-bucket sam-app-samsoft --output-template-file packaged.yml
       - sam deploy --template-file ./packaged.yml --stack-name samnext --capabilities CAPABILITY_IAM
+artifacts:
+  type: zip
