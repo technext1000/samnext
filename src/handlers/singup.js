@@ -5,6 +5,7 @@ const dynamodb = require('aws-sdk/clients/dynamodb');
 const docClient = new dynamodb.DocumentClient();
 
 exports.signUpFunction=async (event)=>{
+    try{
     if (event.httpMethod !== 'POST') {
         throw new Error(`getAllItems only accept POST method, you tried: ${event.httpMethod}`);
     }
@@ -27,5 +28,10 @@ exports.signUpFunction=async (event)=>{
     // All log statements are written to CloudWatch
     console.info(`response from: ${event.path} statusCode: ${response.statusCode} body: ${response.body}`);
     return response;
+}
+catch(error) {
+    console.log('Error happened here!')
+    console.error(error)
+  }
     
 }
