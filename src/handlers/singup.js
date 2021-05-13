@@ -12,8 +12,8 @@ exports.signUpFunction=async (event)=>{
     const body = JSON.parse(event.body)
 
     var params = {
-        TableName : tableName,
-        Item: { email : body.email, name: body.name ,gender: body.gender,mobile:body.mobile,password: body.password }
+        TableName : "ProfileTable",
+        Item : { email : body.email, name: body.name ,gender: body.gender,mobile:body.mobile,password: body.password }
     };
 
     const result = await docClient.put(params).promise();
