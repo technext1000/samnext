@@ -129,7 +129,7 @@ Resources:
         ReadCapacityUnits: 2
         WriteCapacityUnits: 2
   ProfileTable:
-    Type: AWS::Serverless::ProfileTable
+    Type: AWS::Serverless::SimpleTable
     Properties:
       PrimaryKey:
         Name: email
