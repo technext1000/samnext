@@ -6,14 +6,15 @@ const docClient = new dynamodb.DocumentClient();
 
 exports.signUpFunction=async (event)=>{
     if (event.httpMethod !== 'POST') {
-        throw new Error(`getAllItems only accept GET method, you tried: ${event.httpMethod}`);
+        throw new Error(`getAllItems only accept POST method, you tried: ${event.httpMethod}`);
     }
     console.info('received:', event);
     const body = JSON.parse(event.body)
-
+    const email=body.email;
+    console.log("email +++++"+email)
     var params = {
         TableName : "ProfileTable",
-        Item : { email : body.email, name: body.name ,gender: body.gender,mobile:body.mobile,password: body.password }
+        Item : { email : email, name: body.name ,gender: body.gender,mobile:body.mobile,password: body.password }
     };
 
     const result = await docClient.put(params).promise();
