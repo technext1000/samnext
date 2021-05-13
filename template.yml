@@ -101,10 +101,6 @@ Resources:
       MemorySize: 128
       Timeout: 100
       Description: A simple example includes a HTTP post method to add one item to a DynamoDB table.
-      Policies:
-        # Give Create/Read/Update/Delete Permissions to the SampleTable
-        - DynamoDBCrudPolicy:
-            TableName: ProfileTable
       Events:
         Api:
           Type: Api
@@ -120,15 +116,6 @@ Resources:
     Properties:
       PrimaryKey:
         Name: id
-        Type: String
-      ProvisionedThroughput:
-        ReadCapacityUnits: 2
-        WriteCapacityUnits: 2
-  ProfileTable:
-    Type: AWS::Serverless::SimpleTable
-    Properties:
-      PrimaryKey:
-        Name: email
         Type: String
       ProvisionedThroughput:
         ReadCapacityUnits: 2
