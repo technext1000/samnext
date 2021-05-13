@@ -81,8 +81,8 @@ Resources:
       Description: A user registration api includes a HTTP post method to add one item to a DynamoDB table.
       Policies:
         # Give Create/Read/Update/Delete Permissions to the SampleTable
-        #- DynamoDBCrudPolicy:
-        #    TableName: !Ref ProfileTable
+        - DynamoDBCrudPolicy:
+            TableName: ProfileTable
       Events:
         Api:
           Type: Api
