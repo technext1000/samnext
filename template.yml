@@ -74,7 +74,7 @@ Resources:
   RegistrationFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: src/handlers/signup.signUpFunction
+      Handler: src/handlers/singup.signUpFunction
       Runtime: nodejs12.x
       MemorySize: 128
       Timeout: 100
