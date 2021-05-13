@@ -3,7 +3,7 @@ const tableName = process.env.ProfileTable;
 // Create a DocumentClient that represents the query to add an item
 const dynamodb = require('aws-sdk/clients/dynamodb');
 const docClient = new dynamodb.DocumentClient();
-const tableName = process.env.Profile;
+
 exports.signUpFunction=async (event)=>{
     if (event.httpMethod !== 'POST') {
         throw new Error(`getAllItems only accept GET method, you tried: ${event.httpMethod}`);
