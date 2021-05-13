@@ -82,11 +82,11 @@ Resources:
       Policies:
         # Give Create/Read/Update/Delete Permissions to the SampleTable
         - DynamoDBCrudPolicy:
-            TableName: !Ref profile
+            TableName: !Ref ProfileTable
       Environment:
         Variables:
           # Make table name accessible as environment variable from function code during execution
-          SAMPLE_TABLE: !Ref profile
+          SAMPLE_TABLE: !Ref ProfileTable
       Events:
         Api:
           Type: Api
@@ -128,8 +128,8 @@ Resources:
       ProvisionedThroughput:
         ReadCapacityUnits: 2
         WriteCapacityUnits: 2
-  profile:
-    Type: AWS::Serverless::profileTable
+  ProfileTable:
+    Type: AWS::Serverless::ProfileTable
     Properties:
       PrimaryKey:
         Name: email
