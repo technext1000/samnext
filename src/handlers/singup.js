@@ -1,4 +1,4 @@
-const tableName = process.env.ProfileTable;
+const tableName = ProfileTable;
 
 // Create a DocumentClient that represents the query to add an item
 const dynamodb = require('aws-sdk/clients/dynamodb');
